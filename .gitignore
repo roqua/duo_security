@@ -1,1 +1,12 @@
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+Gemfile.lock
+doc/
+lib/bundler/man
+pkg
+rdoc
+tmp
 fixtures/vcr/*
