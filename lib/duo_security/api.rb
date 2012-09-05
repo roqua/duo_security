@@ -3,6 +3,8 @@ require 'httparty'
 
 module DuoSecurity
   class API
+    class UnknownUser < StandardError; end
+
     FACTORS = ["auto", "passcode", "phone", "sms", "push"]
 
     include HTTParty
@@ -29,9 +31,11 @@ module DuoSecurity
     end
 
     def preauth(user)
-      params = {"user" => user}
-      response = post("/preauth", params)
-      response["response"]
+      response = post("/preauth", {"user" => user})["response"]
+
+      raise UnknownUser, response.fetch("status") if response.fetch("result") == "enroll"
+
+      return response
     end
 
     def auth(user, factor, factor_params)

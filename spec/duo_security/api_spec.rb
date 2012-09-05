@@ -58,6 +58,13 @@ module DuoSecurity
           result["result"].must_equal("auth")
         end
       end
+
+      it 'raises when user does not exist' do
+        VCR.use_cassette("api_preauth_unknown_user") do
+          duo = API.new(host, skey, ikey)
+          -> { duo.preauth("unknown") }.must_raise(API::UnknownUser)
+        end
+      end
     end
 
     describe '#auth' do
