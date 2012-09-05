@@ -16,6 +16,13 @@ The shell scripts depend upon three environment variables being set:
     DUO_SKEY=your_secret_key
     DUO_IKEY=your_integration_key
 
+Then to attempt a login, run the following command:
+
+    duo username
+
+The script prints some output, and exits with status 0 if it is a successful login,
+and status 1 otherwise.
+
 ## Contributing
 
 Running the tests also depends upon the above three environment variables to be
