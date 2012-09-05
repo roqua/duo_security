@@ -8,6 +8,7 @@ module DuoSecurity
     FACTORS = ["auto", "passcode", "phone", "sms", "push"]
 
     include HTTParty
+    ssl_ca_file File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "data", "ca-bundle.crt"))
 
     def initialize(host, secret_key, integration_key)
       @host = host
