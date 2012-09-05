@@ -4,9 +4,9 @@ require File.expand_path('../lib/duo_security/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Marten Veldthuis"]
   gem.email         = ["marten@veldthuis.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Perform 2-factor authentication using duosecurity.com}
+  gem.summary       = %q{}
+  gem.homepage      = "https://github.com/roqua/duo_security"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
