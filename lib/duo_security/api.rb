@@ -41,7 +41,7 @@ module DuoSecurity
     def auth(user, factor, factor_params)
       raise ArgumentError.new("Factor should be one of #{FACTORS.join(", ")}") unless FACTORS.include?(factor)
 
-      params = {"user" => user, "factor" => "push", "phone" => "phone1"}
+      params = {"user" => user, "factor" => factor}.merge(factor_params)
       response = post("/auth",params)
 
       response["response"]["result"] == "allow"
