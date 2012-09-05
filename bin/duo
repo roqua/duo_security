@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'duo_security'
+
+host = ENV.fetch("DUO_HOST")
+skey = ENV.fetch("DUO_SKEY")
+ikey = ENV.fetch("DUO_IKEY")
+user = ARGV[0]
+
+api = DuoSecurity::API.new(host, skey, ikey)
+attempt = DuoSecurity::Attempt.new(api, user).login!
+
+if attempt == true
+  puts "Successful login for #{user}"
+  exit 0
+end
+
+# Fall back to failure
+puts "Failed login attempt for #{user}"
+exit 1
