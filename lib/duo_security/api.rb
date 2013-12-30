@@ -34,7 +34,7 @@ module DuoSecurity
     def preauth(user)
       response = post("/preauth", {"user" => user})["response"]
 
-      raise UnknownUser, response.fetch("status") if response.fetch("result") == "enroll"
+      raise UnknownUser, response.fetch("status") if response.fetch("result") == "enroll" || response.fetch("result") == "deny"
 
       return response
     end
