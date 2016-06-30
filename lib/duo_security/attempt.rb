@@ -8,9 +8,9 @@ module DuoSecurity
     def login!
       preauth = @api.preauth(@username)
       factor  = preauth["factors"].fetch("default")
-      
+
       @api.auth(@username, "auto", {"auto" => factor})
-    rescue API::UnknownUser => e
+    rescue API_Base::UnknownUser
       false
     end
   end
