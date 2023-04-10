@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = DuoSecurity::VERSION
 
-  gem.add_dependency "httparty", "~> 0.10"
+  gem.add_dependency "httparty", "~> 0.21"
   
   gem.add_development_dependency "vcr", "~> 2.2.4"
   gem.add_development_dependency "webmock", "~> 1.8.9"
