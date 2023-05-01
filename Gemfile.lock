@@ -1,0 +1,35 @@
+PATH
+  remote: .
+  specs:
+    duo_security (0.0.2)
+      httparty (~> 0.21)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.4)
+      public_suffix (>= 2.0.2, < 6.0)
+    crack (0.4.5)
+      rexml
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
+    mini_mime (1.1.2)
+    multi_xml (0.6.0)
+    public_suffix (5.0.1)
+    rexml (3.2.5)
+    vcr (2.2.5)
+    webmock (1.8.11)
+      addressable (>= 2.2.7)
+      crack (>= 0.1.7)
+
+PLATFORMS
+  aarch64-linux
+
+DEPENDENCIES
+  duo_security!
+  vcr (~> 2.2.4)
+  webmock (~> 1.8.9)
+
+BUNDLED WITH
+   2.4.6
